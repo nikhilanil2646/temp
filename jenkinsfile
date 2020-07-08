@@ -1,0 +1,28 @@
+pipeline{
+    agent any
+    stages{
+        stage('compile'){
+            steps{echo "Compiilig stage mine"}
+        }
+        stage('testing'){
+            steps{ echo "Testing jo b mint"}
+        }
+    }
+    post{
+        always{
+            echo "always run"
+        }
+        success{
+            echo " job success   "
+        }
+        failure{
+            echo " job filaed fg"
+        }
+        unstable{
+            echo "unstable job dd"
+        }
+        changed{
+            echo "changed in fileff"
+        }
+    }
+}
